@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
+	<script></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+		$(function(){
+			$('.header').each(function(){
+				var $slides = $(this).find('#header_img'), 
+				slideCount = $slides.length, 
+				currentIndex = 0;
+				$slides.eq(currentIndex).fadeIn();
+
+				setInterval(showNextSlide, 3000);
+				function showNextSlide(){
+					var nextIndex = (currentIndex + 1) % slideCount;
+
+					$slides.eq(currentIndex).fadeOut();
+					$slides.eq(nextIndex).fadeIn();
+					currentIndex = nextIndex;
+				}
+			})
+		})
+	</script> -->
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+   
+    <!-- <script src="js/script_3.js"></script> -->
+    <script>
+    	$(document).ready(function(){
+    		var menu_offset = $('.menu').offset();
+    		$(window).scroll(function(){
+    			if($(document).scrollTop() > menu_offset.top){
+    				$('.menu').addClass('menu-fixed');
+    			}else{
+    				$('.menu').removeClass('menu-fixed');
+    			}
+    		})
+    	})
+    </script>
+	<style>
+	/* customizable snowflake styling */
+	body{
+		background: #000F46;
+	}
+	.snowflake {
+  		color: #fff;
+  		font-size: 1em;
+  		font-family: Arial, sans-serif;
+  		text-shadow: 0 0 5px #000;
+	}
+	@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}.snowflake:nth-of-type(10){left:25%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s}.snowflake:nth-of-type(11){left:65%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s}
+	body{
+		margin:0; 
+		padding:0;
+		font-family: 'Gelasio', serif;
+
+	}
+	.menu{
+		width:100%;
+		height:70px;
+		background: #000426;
+		font-size:18px;
+		z-index:100;
+		position: absolute;
+		/*left:0px; top:0px;*/
+	}
+	.menu-fixed{
+		position: fixed;
+		top:0px;
+		left:0px;
+	}
+	.header{
+		width:1080px;
+		height:auto;
+	}
+	.content{
+		/*position: relative;
+		padding-top:70px;*/
+		width:1080px;
+		height:auto;
+		/*margin:0 auto;*/
+	}
+	.footer{
+		width:100%;
+		height:130px;
+		margin:0 auto;
+		background: #000F46;
+		padding-top: 30px;
+		float:left;
+		text-align: center;
+	}
+	li{
+		list-style:none;
+		float:left;
+		margin-left:30px;
+		margin-right:30px;
+		line-height:50%;
+		margin-top:14px;
+	}
+	#logo{
+		margin-top:-12px;
+		margin-left:-35px;
+	}
+	#header_img{
+		padding-left:226px;
+	}
+	a{
+		text-decoration: none;
+		color:#EBEEF2;
+	}
+	a:hover{
+		color:#59B5D9;
+	}
+	#source{
+		text-align: center;
+		color:#EBEEF2;
+		font-size: 20px
+	}
+	#made{
+		text-align: center;
+		color:#EBEEF2;
+	}
+	.menu li ul {
+			background: rgb(109,109,109);
+			display:none;  /* 평상시에는 서브메뉴가 안보이게 하기 */
+			height:auto;
+			padding:0px;
+			margin-left:-24px;
+			border:0px;
+			position:absolute;
+			width:100px;
+			z-index:50;
+	}
+	.menu li:hover ul {
+		display:block;   
+		height:230px;
+		background:#000426;
+		color:#EBEEF2;
+		margin-top:30px;
+	}
+	.menu li ul li:hover{
+		display:block;
+	}
+	.menu li:hover ul li{
+		/*margin-bottom:15px;*/
+	}
+	#menu{
+		display: none;
+	}
+	.menu ul li:hover > ul{
+		display: block;
+		height:265px;
+		width:115px;
+		background:#000426;
+		color:#EBEEF2;
+		/*padding-top:30px;*/
+		top:50px;
+	}
+	.menu ul > li > ul > li{
+		/*margin-top:10px;*/
+		line-height:1.2em;
+	}
+	#intro{
+		margin-left:230px;
+		margin-top:50px;
+		font-size:23px;
+		color: #EBEEF2;
+		line-height: 1.6em;
+		margin-bottom: 50px;
+	}
+	#sub_sub{
+		position: absolute;
+		margin-top:-0.5px;
+	}
+	.ar{
+		color: #EBEEF2;
+		font-size:22px;
+		margin-left:420px;
+	}
+	#asdf{
+		font-size:24px;
+	}
+</style>
+</head>
+<body>
+	<div class="snowflakes" aria-hidden="true">
+  		<div class="snowflake">
+  			❅
+  		</div>
+		<div class="snowflake">
+			❅
+		</div>
+		<div class="snowflake">
+  			❆
+ 		</div>
+ 		<div class="snowflake">
+  			❅
+  		</div>
+  		<div class="snowflake">
+  			❆
+  		</div>
+  		<div class="snowflake">
+    		❅
+  		</div>
+  		<div class="snowflake">
+    		❆
+  		</div>
+  		<div class="snowflake">
+    		❅
+  		</div>
+  		<div class="snowflake">
+    		❆
+  		</div>
+  		<div class="snowflake">
+    		❅
+  		</div>
+  		<div class="snowflake">
+    		❆
+  		</div>
+  		<div class="menu">
+  			<ul id="sub">
+  				<li><a href="0116_1.html"><img src="image/겨울왕국 로고_2.png" height="30" id="logo"></a></li>
+  				<li><a href="0116_1.html">Main</a></li>
+  				<li><a href="0116_2.html">Arendelle</a></li>
+  				<li><a href="0116_3.html">
+  					People
+  					<ul id="sub_sub">
+  						<li><a href="0116_7.html">Elsa</a></li>
+  						<li><a href="0116_8.html">Anna</li>
+  						<li><a href="0116_9.html">Kristoff</li>
+  						<li><a href="0116_10.html">Olaf</li>
+              			<li><a href="0116_11.html">Sven</li>
+             			<li><a href="0116_12.html">Parents</li>
+              			<li><a href="0116_13.html">Etc</li>
+  					</ul>
+  				</a></li>
+  				<li><a href="0116_4.html">Movie</a></li>
+  				<li><a href="0116_5.html">Photo</a></li>
+  				<li><a href="0116_6.html">Ost</a></li>
+  			</ul>
+  		</div>
+  		<div class="header">
+ 
+  		</div>
+  		<div class="content">
+  			<div class="ar"><br><br><br><br><img src="image/아렌델_1.jpg" width="650"><br><strong>
+  				아렌델 왕국 (Kingdom of Arendelle)<br>
+  				언어 : 로마자<br>
+  				정치 체제 : 전제 군주제<br>
+  				국가 원수 : 루나드 -> 아그나르 -> 엘사 -> 안나</strong>
+  				<br><br><br><strong>국기</strong><br><img src="image/아렌델 국기.png" width="650"><br>국기는 자색/녹색 배치에 금색 크로커스가 들어간 문양이다. 영화에서는 여왕의 옆모습이 들어간 국기도 몇 보이지만, 이는 대관식 행사를 위해 준비된 국기이지 공식 국기가 아닌 것으로 추정된다.<br><br><br><strong>지리</strong><br><img src="image/아렌델 지도.jpg"width="650">피오르드를 끼고 있는 전형적인 해상 국가로, 작중에서 그 이름이 등장한 이웃 국가로는 위즐튼과 동남쪽의 서던 제도가 있다. 라푼젤과 유진이 아주 잠깐 카메오 출연한 걸로 봐서 코로나 왕국과 멀지 않으며, 같은 세계관을 공유하고 있다는 이야기도 많다.<br><br><br><strong id="asdf">아렌델 근방</strong><br><br><strong>북쪽성</strong><br><img src="image/북쪽 성.png" width="650">아렌델을 둘러싼 산 가운데 가장 높고 거대한 고도를 자랑하는 산<br><br><br><strong>떠돌이 오큰네 무역 본부 그리고 사우나</strong><br><img src="image/사우나.jpg" width="650"><br><br><br>트롤의 거주지<br><img src="image/트롤.jpg" width="650"><br><br><br><strong>마법의 숲 (Enchanted Forest)</strong><br><br><br><strong>아토할란 (Atohallan)</strong><br>단순히 북극에 위치한 빙하의 섬이 아닌 '모든 기억을 가진 강'이다. 겨울왕국2에 전제되어 있는 설정 '물은 기억을 가지고 있다'의 집합체 같은 장소로 세상 모든 기억이 잠들어 있으며 엘사가 도착했을 때 모습은 마치 수많은 모니터가 이어져 커다란 돔을 형성하고 있는 것 같은 형태로 보여졌다. 이후 엘사가 다섯번째 정령임을 깨닫고 각성한 뒤에는 엘사의 영향으로 눈인형들이 직접 과거를 재현하는 형태로 변경되었다
+  			</div>
+  		</div>
+  		<div class="footer">
+  			<p id="source">Source: © Disney, All Rights Reserved</p>
+  			<p id="made">Made by . Park Ji Yoon</p>
+  		</div>
+	</div>
+</body>
+</html>

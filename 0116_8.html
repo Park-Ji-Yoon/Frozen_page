@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
+  <script></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(function(){
+      $('.header').each(function(){
+        var $slides = $(this).find('#header_img'), 
+        slideCount = $slides.length, 
+        currentIndex = 0;
+        $slides.eq(currentIndex).fadeIn();
+
+        setInterval(showNextSlide, 3000);
+        function showNextSlide(){
+          var nextIndex = (currentIndex + 1) % slideCount;
+
+          $slides.eq(currentIndex).fadeOut();
+          $slides.eq(nextIndex).fadeIn();
+          currentIndex = nextIndex;
+        }
+      })
+    })
+  </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+   
+    <!-- <script src="js/script_3.js"></script> -->
+    <script>
+      $(document).ready(function(){
+        var menu_offset = $('.menu').offset();
+        $(window).scroll(function(){
+          if($(document).scrollTop() > menu_offset.top){
+            $('.menu').addClass('menu-fixed');
+          }else{
+            $('.menu').removeClass('menu-fixed');
+          }
+        })
+      })
+    </script>
+  <style>
+  /* customizable snowflake styling */
+  body{
+    background: #000F46;
+  }
+  .snowflake {
+      color: #fff;
+      font-size: 1em;
+      font-family: Arial, sans-serif;
+      text-shadow: 0 0 5px #000;
+  }
+  @-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}.snowflake:nth-of-type(10){left:25%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s}.snowflake:nth-of-type(11){left:65%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s}
+  body{
+    margin:0; 
+    padding:0;
+    font-family: 'Gelasio', serif;
+
+  }
+  .menu{
+    width:100%;
+    height:70px;
+    background: #000426;
+    font-size:18px;
+    z-index:100;
+    position: absolute;
+    /*left:0px; top:0px;*/
+  }
+  .menu-fixed{
+    position: fixed;
+    top:0px;
+    left:0px;
+  }
+  .header{
+    width:1080px;
+    height:0;
+    margin:0 auto;
+    overflow:hidden;
+    padding-top:70px;
+  }
+  .content{
+    position: relative;
+    padding-top:70px;
+    width:1080px;
+    height:1000px;
+    margin:0 auto;
+  }
+  .footer{
+    width:100%;
+    height:130px;
+    margin:0 auto;
+    background: #000F46;
+    padding-top: 30px;
+  }
+  li{
+    list-style:none;
+    float:left;
+    margin-left:30px;
+    margin-right:30px;
+    line-height:50%;
+    margin-top:14px;
+  }
+  #logo{
+    margin-top:-12px;
+    margin-left:-35px;
+  }
+  #header_img{
+    padding-left:226px;
+  }
+  a{
+    text-decoration: none;
+    color:#EBEEF2;
+  }
+  a:hover{
+    color:#59B5D9;
+  }
+  #source{
+    text-align: center;
+    color:#EBEEF2;
+    font-size: 20px
+  }
+  #made{
+    text-align: center;
+    color:#EBEEF2;
+  }
+  .menu li ul {
+      background: rgb(109,109,109);
+      display:none;  /* 평상시에는 서브메뉴가 안보이게 하기 */
+      height:auto;
+      padding:0px;
+      margin-left:-24px;
+      border:0px;
+      position:absolute;
+      width:100px;
+      z-index:50;
+  }
+  .menu li:hover ul {
+    display:block;   
+    height:230px;
+    background:#000426;
+    color:#EBEEF2;
+    margin-top:30px;
+  }
+  .menu li ul li:hover{
+    display:block;
+  }
+  .menu li:hover ul li{
+    /*margin-bottom:15px;*/
+  }
+  #menu{
+    display: none;
+  }
+  .menu ul li:hover > ul{
+    display: block;
+    height:265px;
+    width:115px;
+    background:#000426;
+    color:#EBEEF2;
+    /*padding-top:30px;*/
+    top:50px;
+  }
+  .menu ul > li > ul > li{
+    /*margin-top:10px;*/
+    line-height:1.2em;
+  }
+  #intro{
+    margin-left:230px;
+    margin-top:50px;
+    font-size:23px;
+    color: #EBEEF2;
+    line-height: 1.6em;
+    margin-bottom: 50px;
+  }
+  #sub_sub{
+    position: absolute;
+    margin-top:-0.5px;
+  }
+  .photo{
+    float:left;
+    margin-left:0;
+    margin-top:-15px;
+  }
+  .text{
+    float:left;
+    color: #EBEEF2;
+    font-size: 25px;
+    width:700px;
+    margin-left:80px;
+    line-height: 1.6em;
+  }
+</style>
+</head>
+<body>
+  <div class="snowflakes" aria-hidden="true">
+      <div class="snowflake">
+        ❅
+      </div>
+    <div class="snowflake">
+      ❅
+    </div>
+    <div class="snowflake">
+        ❆
+    </div>
+    <div class="snowflake">
+        ❅
+      </div>
+      <div class="snowflake">
+        ❆
+      </div>
+      <div class="snowflake">
+        ❅
+      </div>
+      <div class="snowflake">
+        ❆
+      </div>
+      <div class="snowflake">
+        ❅
+      </div>
+      <div class="snowflake">
+        ❆
+      </div>
+      <div class="snowflake">
+        ❅
+      </div>
+      <div class="snowflake">
+        ❆
+      </div>
+      <div class="menu">
+        <ul id="sub">
+          <li><a href="0116_1.html"><img src="image/겨울왕국 로고_2.png" height="30" id="logo"></a></li>
+          <li><a href="0116_1.html">Main</a></li>
+          <li><a href="0116_2.html">Arendelle</a></li>
+          <li><a href="0116_3.html">
+            People
+            <ul id="sub_sub">
+              <li><a href="0116_7.html">Elsa</a></li>
+              <li><a href="0116_8.html">Anna</li>
+              <li><a href="0116_9.html">Kristoff</li>
+              <li><a href="0116_10.html">Olaf</li>
+              <li><a href="0116_11.html">Sven</li>
+              <li><a href="0116_12.html">Parents</li>
+              <li><a href="0116_13.html">Etc</li>
+            </ul>
+          </a></li>
+          <li><a href="0116_4.html">Movie</a></li>
+          <li><a href="0116_5.html">Photo</a></li>
+          <li><a href="0116_6.html">Ost</a></li>
+        </ul>
+      </div>
+      <div class="header">
+      </div>
+      <div class="content">
+        <div class="photo">
+          <img src="image/전신안나.png" width="300">
+        </div>
+        <div class="text">
+          Anna<br>국적 : 아렌델<br>출생 : 1820년 6월 21일<br>신체 : 165cm<br>직위 : 다섯 번째 정령이자 아렌델의 상왕<br>가족 : <a href="0116_12.html">할아버지(Runeard)</a>, 할머니(Rita), <a href="0116_11.html">아버지(Agnarr)</a>, <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="0116_11.html">어머니(Iduna)</a>, <a href="0116_7.html">언니(Elsa)</a><br>좋아하는 것 : 엘사, 크리스토프, 올라프, 스벤, 아렌델, 초콜릿, &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp크럼케이크, 모험,
+          트롤들, 새로운 것을 배우는 것<br>테마곡 : Do You Want to Build a Snowman? (같이 눈사람<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp만들래?), Love Is an Open Door (사랑은 열린 문)(듀엣<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp곡), The Next Right Thing (해야 할 일)<br>기타 : 밝고 긍정적인 성격에 모험을 동경하며, 따뜻한 마음씨를<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp지닌 깜찍발랄하고 명랑하다.
+        </div>
+      </div>
+      <div class="footer">
+        <p id="source">Source: © Disney, All Rights Reserved</p>
+        <p id="made">Made by . Park Ji Yoon</p>
+      </div>
+  </div>
+</body>
+</html>

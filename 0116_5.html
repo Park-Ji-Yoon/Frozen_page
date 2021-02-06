@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+   
+    <script src="js/script.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
+  <script></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(function(){
+      $('.header').each(function(){
+        var $slides = $(this).find('#header_img'), 
+        slideCount = $slides.length, 
+        currentIndex = 0;
+        $slides.eq(currentIndex).fadeIn();
+
+        setInterval(showNextSlide, 3000);
+        function showNextSlide(){
+          var nextIndex = (currentIndex + 1) % slideCount;
+
+          $slides.eq(currentIndex).fadeOut();
+          $slides.eq(nextIndex).fadeIn();
+          currentIndex = nextIndex;
+        }
+      })
+    })
+  </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+   
+    <!-- <script src="js/script_3.js"></script> -->
+    <script>
+      $(document).ready(function(){
+        var menu_offset = $('.menu').offset();
+        $(window).scroll(function(){
+          if($(document).scrollTop() > menu_offset.top){
+            $('.menu').addClass('menu-fixed');
+          }else{
+            $('.menu').removeClass('menu-fixed');
+          }
+        })
+      })
+    </script>
+  <style>
+  /* customizable snowflake styling */
+  body{
+    background: #000F46;
+  }
+  .snowflake {
+      color: #fff;
+      font-size: 1em;
+      font-family: Arial, sans-serif;
+      text-shadow: 0 0 5px #000;
+  }
+  @-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}.snowflake:nth-of-type(10){left:25%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s}.snowflake:nth-of-type(11){left:65%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s}
+  body{
+    margin:0; 
+    padding:0;
+    font-family: 'Gelasio', serif;
+
+  }
+  .menu{
+    width:100%;
+    height:70px;
+    background: #000426;
+    font-size:18px;
+    z-index:100;
+    position: absolute;
+    /*left:0px; top:0px;*/
+  }
+  .menu-fixed{
+    position: fixed;
+    top:0px;
+    left:0px;
+  }
+  .header{
+    width:1080px;
+    height:0;
+    margin:0 auto;
+    overflow:hidden;
+    padding-top:100px;
+    padding-bottom: -70px;
+  }
+  .content{
+    position: relative;
+    padding-top:70px;
+    width:1080px;
+    height:11000px;
+    margin:0 auto;
+  }
+  .footer{
+    width:100%;
+    height:130px;
+    margin:0 auto;
+    background: #000F46;
+    padding-top: 30px;
+  }
+  li{
+    list-style:none;
+    float:left;
+    margin-left:30px;
+    margin-right:30px;
+    line-height:50%;
+    margin-top:14px;
+  }
+  #logo{
+    margin-top:-12px;
+    margin-left:-35px;
+  }
+  #header_img{
+    padding-left:226px;
+  }
+  a{
+    text-decoration: none;
+    color:#EBEEF2;
+  }
+  a:hover{
+    color:#59B5D9;
+  }
+  #source{
+    text-align: center;
+    color:#EBEEF2;
+    font-size: 20px
+  }
+  #made{
+    text-align: center;
+    color:#EBEEF2;
+  }
+  .menu li ul {
+      background: rgb(109,109,109);
+      display:none;  /* 평상시에는 서브메뉴가 안보이게 하기 */
+      height:auto;
+      padding:0px;
+      margin-left:-24px;
+      border:0px;
+      position:absolute;
+      width:100px;
+      z-index:50;
+  }
+  .menu li:hover ul {
+    display:block;   
+    height:230px;
+    background:#000426;
+    color:#EBEEF2;
+    margin-top:30px;
+  }
+  .menu li ul li:hover{
+    display:block;
+  }
+  .menu li:hover ul li{
+    /*margin-bottom:15px;*/
+  }
+  #menu{
+    display: none;
+  }
+  .menu ul li:hover > ul{
+    display: block;
+    height:265px;
+    width:115px;
+    background:#000426;
+    color:#EBEEF2;
+    /*padding-top:30px;*/
+    top:50px;
+  }
+  .menu ul > li > ul > li{
+    /*margin-top:10px;*/
+    line-height:1.2em;
+  }
+  #intro{
+    margin-left:230px;
+    margin-top:50px;
+    font-size:23px;
+    color: #EBEEF2;
+    line-height: 1.6em;
+    margin-bottom: 50px;
+  }
+  #sub_sub{
+    position: absolute;
+    margin-top:-0.5px;
+  }
+  #mo{
+    width:200px;
+    height:400px;
+    float:left;
+  }
+  #main_v{
+    margin-left: -35px
+  }
+  #vie{
+    font-size:35px;
+    margin-top:50px;
+    margin-bottom: 30px;
+    color:#EBEEF2;
+    text-align: center;
+  }
+  .scale, .scale_ {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transition: all 0.3s ease-in-out;   /* 부드러운 모션을 위해 추가*/
+    margin-right:20px;
+    float:left;
+  }
+  .scale{
+    margin-right:0;
+  }
+  .scale:hover, .scale_:hover{
+    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+  }
+  #first{
+    /*float:left;*/
+    width:1080px;
+    height:auto;
+    float:left;
+  }
+  .every{
+    height:100%;
+  }
+</style>
+</head>
+<body>
+  <div class="snowflakes" aria-hidden="true">
+      <div class="snowflake">
+        ❅
+      </div>
+    <div class="snowflake">
+      ❅
+    </div>
+    <div class="snowflake">
+        ❆
+    </div>
+    <div class="snowflake">
+        ❅
+      </div>
+      <div class="snowflake">
+        ❆
+      </div>
+      <div class="snowflake">
+        ❅
+      </div>
+      <div class="snowflake">
+        ❆
+      </div>
+      <div class="snowflake">
+        ❅
+      </div>
+      <div class="snowflake">
+        ❆
+      </div>
+      <div class="snowflake">
+        ❅
+      </div>
+      <div class="snowflake">
+        ❆
+      </div>
+      <div class="menu">
+        <ul id="sub">
+          <li><a href="0116_1.html"><img src="image/겨울왕국 로고_2.png" height="30" id="logo"></a></li>
+          <li><a href="0116_1.html">Main</a></li>
+          <li><a href="0116_2.html">Arendelle</a></li>
+          <li><a href="0116_3.html">
+            People
+            <ul id="sub_sub">
+              <li><a href="0116_7.html">Elsa</a></li>
+              <li><a href="0116_8.html">Anna</li>
+              <li><a href="0116_9.html">Kristoff</li>
+              <li><a href="0116_10.html">Olaf</li>
+              <li><a href="0116_11.html">Sven</li>
+              <li><a href="0116_12.html">Parents</li>
+              <li><a href="0116_13.html">Etc</li>
+            </ul>
+          </a></li>
+          <li><a href="0116_4.html">Movie</a></li>
+          <li><a href="0116_5.html">Photo</a></li>
+          <li><a href="0116_6.html">Ost</a></li>
+        </ul>
+      </div>
+      <div class="header">
+        
+      </div>
+      <div class="content">
+        <div class="every">
+          <div id="first">
+            <img src="image/결혼사진.jpg" width="596" style="float:left">
+            <img src="image/단체2.jpg" width="484" style="float:left">
+            <img src="image/단체3.jpg" width="484" style="float:left">
+          </div>
+          <div id="first">
+            <img src="image/단체1.jpg" width="530" style="float:left">
+            <img src="image/단체4.jpg" width="550" style="float:left">
+          </div>
+          <div id="first">
+            <img src="image/엘사3.jpg" width="516" style="float:left"> 
+            <img src="image/엘사2.jpg" width="564" style="float:left">
+            <img src="image/엘사6.jpg" width="564" style="float:left">
+          </div>
+          <div id="first">
+            <img src="image/전신엘사_2.png" width="310" style="float:left">
+            <img src="image/엘사4.jpg" width="420" style="float:left"> 
+            <img src="image/전신엘사_4.png" width="350" style="float:left">
+          </div>
+          <div id="first">
+            <img src="image/엘사2.jpg" width="637" style="float:left">
+            <img src="image/엘사5.jpeg" width="443" style="float:left"> 
+          </div>
+          <div id="first">
+            <img src="image/안나_2.jpg" width="506" style="float:left">
+            <img src="image/안나1.jpg" width="574" style="float:left"> 
+            <img src="image/안나4.jpg" width="574" style="float:left"> 
+          </div>
+          <div id="first">
+            <img src="image/전신안나_2.jpg" width="407" style="float:left">
+            <img src="image/안나3.jpg" width="673" style="float:left"> 
+            <img src="image/안나6.jpg" width="673" style="float:left"> 
+          </div>
+          <div id="first">
+            <img src="image/크리스토프1.jpg" width="583" style="float:left">
+            <img src="image/크리스토프2.png" width="497" style="float:left"> 
+            <img src="image/크리스토프5.jpg" width="497" style="float:left"> 
+          </div>
+          <div id="first">
+            <img src="image/크리스토프4.jpg" width="253" style="float:left">
+            <img src="image/크리스토프3.png" width="827" style="float:left"> 
+          </div>
+          <div id="first">
+            <img src="image/올라프.jpg" width="524" style="float:left">
+            <img src="image/올라프5.jpg" width="556" style="float:left"> 
+            <img src="image/올라프2.jpg" width="556" style="float:left"> 
+          </div>
+          <div id="first">
+            <img src="image/올라프3.jpg" width="455" style="float:left">
+            <img src="image/올라프1.jpg" width="625" style="float:left"> 
+            <img src="image/올라프4.jpg" width="625" style="float:left"> 
+          </div>
+          <div id="first">
+            <img src="image/스벤2.jpg" width="490" style="float:left">
+            <img src="image/스벤1.jpeg" width="590" style="float:left"> 
+            <img src="image/스벤3.jpg" width="590" style="float:left"> 
+          </div>
+          <div id="first">
+            <img src="image/스벤4.jpg" width="490" style="float:left">
+            <img src="image/스벤5.png" width="590" style="float:left"> 
+          </div>
+          <div id="first">
+            <img src="image/크리스토프1.jpg" width="560" style="float:left">
+            <img src="image/기타2.jpg" width="520" style="float:left"> 
+            <img src="image/기타4.jpg" width="520" style="float:left"> 
+          </div>
+          <div id="first">
+            <img src="image/기타1.jpg" width="511" style="float:left">
+            <img src="image/기타3.jpg" width="569" style="float:left"> 
+            <img src="image/기타9.jpg" width="569" style="float:left"> 
+          </div>
+          <div id="first">
+            <img src="image/기타10.jpg" width="540" style="float:left">
+            <img src="image/기타.jpg" width="540" style="float:left"> 
+            <img src="image/기타14.jpg" width="540" style="float:left"> 
+          </div>
+          <div id="first">
+            <img src="image/기타13.jpg" width="1080" style="float:left">
+            <img src="image/기타6.jpg" width="1080" style="float:left"> 
+          </div>
+          <div id="first">
+            <img src="image/기타15.jpg" width="590" style="float:left">
+            <img src="image/기타7.jpg" width="490" style="float:left"> 
+            <img src="image/기타8.jpg" width="490" style="float:left"> 
+          </div>
+          <div id="first">
+            <img src="image/기타8.jpg" width="1080" style="float:left"> 
+          </div>
+        </div>
+        <div class="elsa">
+        </div>
+        <div class="anna">
+        </div>
+        <div class="cri">
+        </div>
+        <div class="oraf">
+        </div>
+        <div class="sven">
+        </div>
+        <div class="other">
+        </div>
+      </div>
+      <div class="footer">
+        <p id="source">Source: © Disney, All Rights Reserved</p>
+        <p id="made">Made by . Park Ji Yoon</p>
+      </div>
+  </div>
+</body>
+</html>
